@@ -4,10 +4,10 @@ class Penjumlahan {
   }
 }
 
-// Menentukan tipe data berdasarkan NIM 2311104001 (berakhiran 1 → float)
-const angka1 = 23.0; // 2 digit pertama
-const angka2 = 11.0; // 2 digit berikutnya
-const angka3 = 10.0; // 2 digit terakhir
+//  2311104001 (berakhiran 1 → float)
+const angka1 = 23.0;
+const angka2 = 11.0;
+const angka3 = 10.0;
 
 console.log(
   `Hasil Penjumlahan: ${Penjumlahan.jumlahTigaAngka(angka1, angka2, angka3)}`
@@ -35,7 +35,6 @@ class SimpleDataBase {
   }
 }
 
-// Contoh penggunaan
 const db = new SimpleDataBase();
 db.addNewData(23);
 db.addNewData(11);
