@@ -1,0 +1,32 @@
+{
+  "members" : [
+    {
+       "firstName": "Prajna",
+       "lastName": "Paramitha",
+       "gender": "female",
+       "age": 19,
+       "nim": "2311104014"
+    },
+    {
+       "firstName": "Mei",
+       "lastName": "Sari",
+       "gender": "Female",
+       "age": 19,
+       "nim": "2311104012"
+    },
+    {
+       "firstName": "Martryatus",
+       "lastName": "Sofia",
+       "gender": "Female",
+       "age": 19,
+       "nim": "2311104003"
+    },
+    {
+       "firstName": "Novita",
+       "lastName": "Tri",
+       "gender": "female",
+       "age": 19,
+       "nim": "2311104007"
+    }
+  ]
+}
