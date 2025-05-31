@@ -1,0 +1,11 @@
+{
+  "name": "modul14_1234567890",
+  "version": "1.0.0",
+  "description": "Tugas Jurnal Modul 14 - Praktikum Informatika",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Nama Kamu",
+  "license": "MIT"
+}
