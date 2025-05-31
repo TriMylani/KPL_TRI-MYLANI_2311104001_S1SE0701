@@ -1,7 +1,7 @@
-const { expect } = require('chai');
-const { CariTandaBilangan } = require('../renderer');
+const { expect } = require("chai");
+const { CariTandaBilangan } = require("../renderer");
 
-describe('CariTandaBilangan', function () {
+describe("CariTandaBilangan", function () {
   it('harus mengembalikan "Negatif" jika input < 0', function () {
     expect(CariTandaBilangan(-10)).to.equal("Negatif");
   });

@@ -1,0 +1,14 @@
+{
+  "name": "modul12_1202210000",
+  "version": "1.0.0",
+  "description": "Tugas Jurnal Modul 12 - GUI Pangkat",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "jest": "^29.6.0"
+  }
+}
