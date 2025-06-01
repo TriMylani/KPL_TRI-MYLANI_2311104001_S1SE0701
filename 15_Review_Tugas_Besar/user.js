@@ -1,47 +1,25 @@
-const crypto = require('crypto');
+import { readFile } from "fs/promises";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Menentukan path ke file JSON mata kuliah
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const courseFilePath = path.join(__dirname, "tp7_2_2311104001.json");
 
 /**
- * Menghash password menggunakan SHA256
- * @param {string} password
- * @returns {string}
+ * Membaca dan menampilkan daftar mata kuliah dari file JSON.
  */
-function hashPassword(password) {
-  return crypto.createHash('sha256').update(password).digest('hex');
-}
+export async function readCourses() {
+  try {
+    const fileContent = await readFile(courseFilePath, "utf8");
+    const courseData = JSON.parse(fileContent);
 
-/**
- * Membuat objek user baru
- * @param {string} username
- * @param {string} password
- * @returns {object}
- */
-function createUser(username, password) {
-  return {
-    username,
-    password: hashPassword(password)
-  };
+    console.log("\nDaftar Mata Kuliah yang Diambil:");
+    courseData.courses.forEach((course, index) => {
+      console.log(`MK ${index + 1}: ${course.code} - ${course.name}`);
+    });
+  } catch (error) {
+    console.error("❌ Gagal membaca file mata kuliah:", error.message);
+  }
 }
-
-/**
- * Validasi username: hanya huruf A-Z, panjang 4–20
- */
-function isValidUsername(username) {
-  return /^[a-zA-Z]{4,20}$/.test(username);
-}
-
-/**
- * Validasi password: 8–20 karakter, ada simbol, tidak mengandung username
- */
-function isValidPassword(password, username) {
-  const panjangOke = password.length >= 8 && password.length <= 20;
-  const adaSimbol = /[!@#$%^&*]/.test(password);
-  const tidakAdaUsername = !password.includes(username);
-  return panjangOke && adaSimbol && tidakAdaUsername;
-}
-
-module.exports = {
-  hashPassword,
-  createUser,
-  isValidUsername,
-  isValidPassword
-};

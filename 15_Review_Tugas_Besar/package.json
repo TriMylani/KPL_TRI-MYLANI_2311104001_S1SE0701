@@ -1,16 +1,11 @@
 {
-  "name": "modul15_1234567890",
+  "name": "15_review_tugas_besar",
   "version": "1.0.0",
-  "description": "Tugas Jurnal Modul 15 - Registrasi & Login dengan Secure Coding",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Nama Kamu",
-  "license": "MIT",
-  "dependencies": {
-    "crypto": "^1.0.1",
-    "fs-extra": "^11.3.0",
-    "readline-sync": "^1.4.10"
-  }
+  "author": "Melani",
+  "license": "ISC"
 }

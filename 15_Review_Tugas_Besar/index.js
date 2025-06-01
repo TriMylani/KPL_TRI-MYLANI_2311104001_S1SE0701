@@ -1,26 +1,37 @@
-const readline = require('readline-sync');
-const { register, login } = require('./auth');
+import readline from "readline";
+import { register, login } from "./auth.js";
 
-console.log('=== Aplikasi Login Praktikum Modul 15 ===');
-console.log('1. Registrasi');
-console.log('2. Login');
-const choice = readline.question('Pilih menu (1/2): ');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-(async () => {
-  try {
-    const username = readline.question('Username: ');
-    const password = readline.question('Password: ', { hideEchoBack: true });
+const ask = (q) => new Promise((res) => rl.question(q, res));
 
-    if (choice === '1') {
-      const result = await register(username, password);
-      console.log(result);
-    } else if (choice === '2') {
-      const result = await login(username, password);
-      console.log(result);
-    } else {
-      console.log('Menu tidak valid.');
-    }
-  } catch (err) {
-    console.error('Error:', err.message);
+async function main() {
+  console.clear();
+  console.log("===========================================");
+  console.log("|      Aplikasi Registrasi & Login        |");
+  console.log("|     Modul 15 - KPL - 2311104001         |");
+  console.log("===========================================\n");
+
+  console.log(" Silakan pilih menu:\n");
+  console.log("[1] Registrasi Pengguna");
+  console.log("[2] Login Pengguna");
+  console.log("[0] Keluar\n");
+
+  const choice = await ask("Masukkan pilihan Anda: ");
+
+  if (choice === "1") {
+    await register(ask);
+  } else if (choice === "2") {
+    await login(ask);
+  } else if (choice === "0") {
+    console.log("\n👋 Terima kasih telah menggunakan aplikasi.");
+  } else {
+    console.log("❌ Pilihan tidak valid.");
   }
-})();
+  rl.close();
+}
+
+main();
